@@ -31,6 +31,11 @@ export const siteConfig = {
   phone: null as string | null,
   yearsExperience: 7,
   domain: "dawidbubernak.pl",
+  social: {
+    github: "https://github.com/BuberDev",
+    linkedin: "https://de.linkedin.com/in/dawid-bubernak-90554220a/en",
+    x: "https://x.com/DBubernak",
+  },
 };
 
 export const hero = {

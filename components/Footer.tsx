@@ -1,9 +1,16 @@
 import { ArrowUp, Mail, MapPin } from "lucide-react";
+import { GithubIcon, LinkedinIcon, XSocialIcon } from "@/components/ui/social-icons";
 import { nav, siteConfig, hero } from "@/lib/content";
 
 const columnLinks = [
   { heading: "Nawigacja", items: nav.slice(0, 4) },
   { heading: "Więcej", items: nav.slice(4) },
+];
+
+const socialLinks = [
+  { label: "GitHub", href: siteConfig.social.github, icon: GithubIcon },
+  { label: "LinkedIn", href: siteConfig.social.linkedin, icon: LinkedinIcon },
+  { label: "X", href: siteConfig.social.x, icon: XSocialIcon },
 ];
 
 export function Footer() {
@@ -21,6 +28,20 @@ export function Footer() {
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-mist">
               {hero.subheadline}
             </p>
+            <div className="mt-6 flex items-center gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-steel text-mist transition-colors hover:border-signal hover:text-signal"
+                >
+                  <social.icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
           </div>
 
           {columnLinks.map((column) => (

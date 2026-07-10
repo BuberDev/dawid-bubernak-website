@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { Copy, Check, Mail, MapPin, Phone, Send } from "lucide-react";
+import { GithubIcon, LinkedinIcon, XSocialIcon } from "@/components/ui/social-icons";
 import { contact, siteConfig, nav } from "@/lib/content";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
@@ -78,6 +79,36 @@ export function Contact() {
                   </div>
                 </div>
               )}
+
+              <div className="flex items-center gap-3 pt-2">
+                <a
+                  href={siteConfig.social.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-steel text-mist transition-colors hover:border-signal hover:text-signal"
+                >
+                  <GithubIcon className="h-4 w-4" />
+                </a>
+                <a
+                  href={siteConfig.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-steel text-mist transition-colors hover:border-signal hover:text-signal"
+                >
+                  <LinkedinIcon className="h-4 w-4" />
+                </a>
+                <a
+                  href={siteConfig.social.x}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X (Twitter)"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-steel text-mist transition-colors hover:border-signal hover:text-signal"
+                >
+                  <XSocialIcon className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </Reveal>
 
