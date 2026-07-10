@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { railSections } from "@/lib/content";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 export function ScrollRail() {
   const [progress, setProgress] = useState(0);

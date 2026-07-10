@@ -27,6 +27,19 @@
   --color-ember: var(--color-ember);
   --color-ember-dim: var(--color-ember-dim);
 
+  /* shadcn/ui semantic tokens, mapped onto the site palette above */
+  --color-background: var(--color-obsidian);
+  --color-foreground: var(--color-paper);
+  --color-card: var(--color-surface);
+  --color-card-foreground: var(--color-paper);
+  --color-border: var(--color-steel);
+  --color-input: var(--color-steel);
+  --color-muted: var(--color-surface-2);
+  --color-muted-foreground: var(--color-fog);
+  --color-primary: var(--color-signal);
+  --color-primary-foreground: var(--color-obsidian);
+  --color-ring: var(--color-signal);
+
   --font-sans: var(--font-geist-sans);
   --font-display: var(--font-space-grotesk);
   --font-mono: var(--font-geist-mono);
@@ -36,6 +49,7 @@
   --animate-drift-slow: drift 24s ease-in-out infinite reverse;
   --animate-marquee: marquee 32s linear infinite;
   --animate-glow: glow 5s ease-in-out infinite;
+  --animate-spotlight: spotlight 2s ease 0.4s 1 forwards;
 }
 
 @keyframes fade-up {
@@ -75,6 +89,17 @@
   }
   50% {
     opacity: 1;
+  }
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
   }
 }
 
@@ -118,6 +143,22 @@ body {
 
 .perspective-container {
   perspective: 1600px;
+}
+
+.loader {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 2px solid var(--color-steel);
+  border-top-color: var(--color-signal);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

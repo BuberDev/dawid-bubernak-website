@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 import { faq, nav } from "@/lib/content";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 const hash = nav.find((item) => item.href === "#faq")?.hash ?? "0x07";
 
